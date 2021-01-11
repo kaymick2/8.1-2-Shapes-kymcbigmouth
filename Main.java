@@ -17,6 +17,7 @@ public class Main {
     } catch (InputMismatchException e) {
       System.out.println("Please enter whole numbers only!");
       in.next();
+      
     }
     do {
       switch (switchSelection) {
@@ -64,7 +65,6 @@ public class Main {
       System.out.print("Enter the value of the radius:");
       radius = in.nextDouble();
       System.out.println("The volume of the " + shapeType + " is " + nSphere.getV(radius));
-      double sphereVolume = ( 4.0 / 3.0 ) * Math.PI * Math.pow( radius, 3 );
 
       System.out.println("The surface area of the " + shapeType + " is " + nSphere.getSA(radius));
     }
