@@ -40,28 +40,33 @@ public class Main {
         continue;
       }
     } while (switchSelection > 3);
+
+
     if (switchSelection == 1) {
 
       System.out.print("Enter the value of the radius:");
       radius = in.nextDouble();
       System.out.print("Enter the value of the height:");
       height = in.nextDouble();
-      System.out.println("The surface area of the " + shapeType + " is " + nCone.getSA(height,radius));
-      System.out.println("The volume of the cone is " + nCone.getV());
+      System.out.println("The surface area of the " + shapeType + " is " + nCone.getSA(height, radius));
+
+      System.out.println("The volume of the cone is " + nCone.getV(height, radius));
 
     } else if (switchSelection == 2) {
       System.out.print("Enter the value of the radius:");
       radius = in.nextDouble();
       System.out.print("Enter the value of the height:");
       height = in.nextDouble();
-      System.out.println("The surface area of the " + shapeType + " is " + nCylinder.getSA());
-      System.out.println("The volume of the cone is " + nCylinder.getV());
+      System.out.println("The surface area of the " + shapeType + " is " + nCylinder.getSA(height, radius));
+      System.out.println("The volume of the cone is " + nCylinder.getV(height, radius));
 
     } else if (switchSelection == 3) {
       System.out.print("Enter the value of the radius:");
       radius = in.nextDouble();
-      System.out.println("The surface area of the " + shapeType + " is " + nSphere.getSA());
-      System.out.println("The volume of the " + shapeType + " is " + nSphere.getV());
+      System.out.println("The volume of the " + shapeType + " is " + nSphere.getV(radius));
+      double sphereVolume = ( 4.0 / 3.0 ) * Math.PI * Math.pow( radius, 3 );
+
+      System.out.println("The surface area of the " + shapeType + " is " + nSphere.getSA(radius));
     }
     in.close();
   }

@@ -9,12 +9,12 @@ public class Cylinder
     this.radius = radius;
   }
 
-  public double getSA()
+  public double getSA(double height, double radius)
   {
     double SA = (2*(Math.PI)*(radius)*(height)) + 2*Math.PI*(Math.pow(radius, 2));
     return SA;
   }
-  public double getV()
+  public double getV(double height, double radius)
   {
     double V = (Math.PI*(radius*radius)*height);
     return V;
