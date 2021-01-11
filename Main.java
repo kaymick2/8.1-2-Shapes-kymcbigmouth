@@ -78,7 +78,5 @@ public class Main {
         quitSelection = false;
       
     } while (quitSelection==false);
-
   }
-
 }

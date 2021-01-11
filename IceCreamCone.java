@@ -17,5 +17,4 @@ public class IceCreamCone {
     double V = (Math.PI * (radius * radius) * height) / 3;
     return V;
   }
-
 }
