@@ -11,7 +11,7 @@ public class Cylinder
 
   public double getSA()
   {
-    double SA = (2*(Math.PI)*(radius)*(height)) + 2*Math.PI*(Math.pow(radius, 2);
+    double SA = (2*(Math.PI)*(radius)*(height)) + 2*Math.PI*(Math.pow(radius, 2));
     return SA;
   }
   public double getV()

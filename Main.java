@@ -1,16 +1,64 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main
-{
-  public static void main(String[] args) 
-  {
+public class Main {
+  public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-    System.out.print("Enter the value of the radius:");
-    double radius = in.nextDouble();
-    System.out.print("Enter the value of the height:");
-    double height = in.nextDouble();
-    IceCreamCone cone = new IceCreamCone(height, radius);
-    System.out.println("The surface area of the cone is "+cone.getSA());
-    System.out.println("The volume of the cone is "+cone.getV());
+    int switchSelection = 0;
+    IceCreamCone nCone = new IceCreamCone(height, radius);
+    Cylinder nCylinder = new Cylinder(height, radius);
+    Sphere nSphere = new Sphere(radius);
+    String shapeType = "shape value not entered";
+    System.out.println("Please enter a number. 1 for Cone, 2 for Cylinder, and 3 for Sphere. Enter 4 to quit.");
+    try {
+      switchSelection = in.nextInt();
+    } catch (InputMismatchException e) {
+      System.out.println("Please enter whole numbers only!");
+      in.next();
+    }
+    do {
+      switch (switchSelection) {
+      case 1:
+        System.out.println("You have selected Cone.");
+        shapeType = "Cone";
+      case 2:
+        System.out.println("You have selected Cylinder.");
+        shapeType = "Cylinder";
+      case 3:
+        System.out.println("You have selected Sphere.");
+        shapeType = "Sphere";
+      case 4:
+        System.exit(69);
+
+      default:
+        System.out.println("Invalid response!");
+        continue;
+      }
+    } while (switchSelection >= 3);
+    if (switchSelection == 1) {
+
+      System.out.print("Enter the value of the radius:");
+      double radius = in.nextDouble();
+      System.out.print("Enter the value of the height:");
+      double height = in.nextDouble();
+      System.out.println("The surface area of the " + shapeType + " is " + nCone.getSA());
+      System.out.println("The volume of the cone is " + nCone.getV());
+
+    } else if (switchSelection == 2) {
+      System.out.print("Enter the value of the radius:");
+      double radius = in.nextDouble();
+      System.out.print("Enter the value of the height:");
+      double height = in.nextDouble();
+      System.out.println("The surface area of the " + shapeType + " is " + nCylinder.getSA());
+      System.out.println("The volume of the cone is " + nCylinder.getV());
+
+    } else if (switchSelection == 3) {
+      System.out.print("Enter the value of the radius:");
+      double radius = in.nextDouble();
+      System.out.println("The surface area of the " + shapeType + " is " + nSphere.getSA());
+      System.out.println("The volume of the " + shapeType + " is " + nSphere.getV());
+    }
+    in.close();
   }
+
 }
