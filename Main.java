@@ -12,13 +12,10 @@ public class Main {
     Sphere nSphere = new Sphere(radius);
     String shapeType = "shape value not entered";
     System.out.println("Please enter a number. 1 for Cone, 2 for Cylinder, and 3 for Sphere. Enter 4 to quit.");
-    try {
-      switchSelection = in.nextInt();
-    } catch (InputMismatchException e) {
-      System.out.println("Please enter whole numbers only!");
-      in.next();
-      
-    }
+        while (!in.hasNextInt()) {
+            System.out.println("Please enter a number. 1 for Cone, 2 for Cylinder, and 3 for Sphere. Enter 4 to quit.");
+            in.next();
+        }
     do {
       switch (switchSelection) {
       case 1:
